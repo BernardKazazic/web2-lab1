@@ -8,7 +8,6 @@ const homePage = (req: Request, res: Response) => {
     if (req.oidc.isAuthenticated()) {
     userId = req.oidc.user?.sub;
     username = req.oidc.user?.name ?? userId;
-    console.log(userId)
     }
     
     if(username === undefined) {

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Match Result Form</title>
+</head>
+<body>
+    <h1>Match Result Form</h1>
+    <form method="POST" action="/createCompetition">
+        <label for="competitors">Competitors:</label>
+        <input type="text" id="competitors" name="competitors" required><br>
+
+        <label for="win">Win:</label>
+        <input type="number" id="win" name="win" required><br>
+
+        <label for="draw">Draw:</label>
+        <input type="number" id="draw" name="draw" required><br>
+
+        <label for="lose">Lose:</label>
+        <input type="number" id="lose" name="lose" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

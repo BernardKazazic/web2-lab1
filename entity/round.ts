@@ -8,9 +8,6 @@ export class Round {
     @PrimaryGeneratedColumn()
     id!: number
 
-    @Column()
-    roundNumber!: number
-
     @ManyToOne(() => Competition, (competition) => competition.rounds, { onDelete: 'CASCADE' })
     competition!: Competition
 
