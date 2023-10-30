@@ -52,7 +52,7 @@ const createCompetition = (req: Request, res: Response) => {
         res.render('createCompetition', { error: "Failed while saving competition" });
     });
 
-    
+
 
     for(let i = 0; i < competition.rounds.length; i++) {
         competition.rounds[i].competition.id = competitionId;
