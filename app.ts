@@ -1,28 +1,19 @@
 import express from 'express';
 import indexRouter from './routes/homeRouter';
-import { auth, requiresAuth } from 'express-openid-connect';
-import loadEnv from './config/config';
+import { auth } from 'express-openid-connect';
+import { AppDataSource } from './config/datasource';
+import { Auth0Config } from './config/auth0';
 
-loadEnv();
-
-const config = {
-  authRequired: false,
-  idpLogout: true,
-  secret: process.env.SECRET,
-  baseURL: 'http://localhost:3000',
-  clientID: process.env.CLIENT_ID,
-  issuerBaseURL: process.env.ISSUER_BASE_URL,
-  authorizationParams: {
-    response_type: 'code',
-  },
-}
+AppDataSource.initialize();
 
 const app = express();
 
 app.set('view engine', 'ejs');
-app.use(auth(config));
 
+app.use(express.json());
+app.use(auth(Auth0Config));
 
+// routes
 app.use('/', indexRouter);
 
 app.listen(3000, () => {
