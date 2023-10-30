@@ -1,5 +1,9 @@
 import { DataSource } from "typeorm";
 import * as dotenv from "dotenv";
+import { Competition } from "../entity/competition";
+import { Competitor } from "../entity/competitor";
+import { Round } from "../entity/round";
+import { Match } from "../entity/match";
 
 dotenv.config();
 
@@ -12,7 +16,7 @@ export const AppDataSource = new DataSource({
     database: process.env.DB_NAME,
     synchronize: true,
     logging: true,
-    entities: [],
+    entities: [Competition, Competitor, Round, Match],
     subscribers: [],
     migrations: [],
 })
