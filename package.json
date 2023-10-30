@@ -6,9 +6,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/app.js",
-    "clean": "rmdir /s /q dist",
-    "copyfiles": "xcopy /s /i src\\public dist\\public",
-    "dev": "npm run clean && npm run build && npm run copyfiles && npm start",
+    "dev": "npm run build && npm start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -17,7 +15,10 @@
   "dependencies": {
     "@types/express": "^4.17.20",
     "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
+    "express-openid-connect": "^2.17.0",
     "pg": "^8.11.3",
     "typeorm": "^0.3.17"
   }
